@@ -1,0 +1,41 @@
+class barang:
+    def __init__(self, nama, harga, jumlah):
+        self.nama = nama
+        self.harga = harga
+        self.jumlah = jumlah
+
+    
+list_barang = []
+
+def tambah():
+    nama = input("Masukkan nama barang : ")
+    harga = int(input("Masukkan harga barang : "))
+    jumlah = int(input("Masukkan jumlah barang : "))
+    Barang = barang(nama, harga, jumlah)
+    list_barang.append(Barang)
+    print("Barang berhasil di tambahkan")
+
+def view():
+    for angka, Barang in enumerate(list_barang, start=1):
+        print(f"""
+              Nama barang {angka} : {Barang.nama}
+              Harga nya : {Barang.harga}
+              Jumlah nya : {Barang.jumlah}
+               """)
+        
+
+while True:
+    print("---------------WELCOME TO MY PRPGRAM---------------")
+    print("1. Tambah Produk")
+    print("2. Lihat List")
+    print("3. Keluar")
+    tanya = input("Masukkan pilihan (angka saja) : ")
+
+    if tanya == "1":
+        tambah()
+    elif tanya == "2":
+        view()
+    elif tanya == "3":
+        break
+    else:
+        print("Pilihan tidak ada di atas")
