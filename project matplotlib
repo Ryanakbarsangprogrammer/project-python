@@ -1,0 +1,40 @@
+from matplotlib import pyplot as plt
+
+data_x = []
+data_y = []
+
+def tambah():
+    x = int(input("Masukkan jumlah barang : "))
+    y = int(input("Masukkan umur mereka : "))
+    data_x.append(x)
+    data_y.append(y)
+    print("Data berhasil ditambahkan")
+    
+def view():
+    plt.plot(data_x, data_y)
+    plt.title("Daftar jumlah barang dan umur pembeli")
+    plt.xlabel("Jumlah barang")
+    plt.ylabel("Umur pembeli")
+    plt.show()
+
+while True:
+    print("---------------WELCOME TO MY PRPGRAM---------------")
+    print("1. Tambah data")
+    print("2. Lihat data")
+    print("3. Keluar")
+    choice = input("Masukkan pilihan (angka saja) : ")
+
+    if choice == "1":
+        tambah()
+    elif choice == "2":
+        view()
+    elif choice == "3":
+        break
+    else:
+        print("Pilihan tidak ditemukan")
+
+    teks = input("Apakah anda masih ingin lanjut? (y/n) : ")
+
+    if teks.lower() == "n":
+          print("Terima kasih telah menggunakan Kalkulator BMI")
+          break
