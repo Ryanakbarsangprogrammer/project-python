@@ -1,0 +1,14 @@
+import pandas as pd
+from matplotlib import pyplot as plt
+
+df = pd.read_csv("Data_provinsi.csv")
+width = 0.25  # Lebar setiap bar
+
+# fungsi width untuk mengatur jarak antar bar 
+plt.bar(df.Tahun - 0.87 * width, df.Aceh, width=width, color="b", label="Aceh")
+plt.bar(df.Tahun, df.Medan, width=width, color="r", label="Medan")
+plt.bar(df.Tahun + 0.87 * width, df.Padang, width=width, color="g", label="Padang")
+
+plt.legend()
+plt.title("Data tahunan provinsi")
+plt.show()
