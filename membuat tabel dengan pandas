@@ -1,0 +1,32 @@
+import pandas as pd
+
+data = {
+    "Tahun" : [2015,2016,2017,2018,2019,2020,2021,2022],
+    "Aceh" : [118,119,120,121,122,123,124,125],
+    "Medan" : [122,117,125,121,126,124,123,118],
+    "Padang" : [119,123,124,126,118,120,123,122]
+}
+
+def add_data(Tahun, Aceh, Medan, Padang):
+    data1 = {
+        "Tahun" : [Tahun],
+        "Aceh" : [Aceh],
+        "Medan" : [Medan],
+        "Padang" : [Padang]
+    }
+    
+    data['Tahun'].append(Tahun)
+    data['Aceh'].append(Aceh)
+    data['Medan'].append(Medan)
+    data['Padang'].append(Padang)
+    
+    return data1
+
+add_data(2023, 120, 121, 123)
+add_data(2024,125,118,117)
+add_data(2025,118,119,117)
+
+df = pd.DataFrame(data)
+df.index += 1
+df.to_csv("Data_provinsi.csv", index=True)
+print(df)
