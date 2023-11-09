@@ -1,0 +1,20 @@
+from matplotlib import pyplot as plt
+import pandas as pd
+
+
+df = pd.read_csv("Data_provinsi.csv")
+
+aceh = sum(df.Aceh)
+medan = sum(df.Medan)
+padang = sum(df.Padang)
+
+slice = [aceh,medan,padang]
+labels = ["ACEH", "MEDAN", "PADANG"]
+colors = ["b", "r", "g"]
+explode = [0.2,0,0]
+
+plt.pie(slice, labels=labels, colors=colors, wedgeprops={"edgecolor" : "black"}, autopct="%1.1f%%", explode=explode)
+
+plt.title("DATA PROVINSI SELAMA 10 TAHUN")
+plt.tight_layout()
+plt.show()
