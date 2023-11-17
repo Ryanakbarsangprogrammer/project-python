@@ -1,0 +1,22 @@
+from matplotlib import pyplot as plt
+import pandas as pd
+
+plt.style.use("seaborn")
+
+df = pd.read_csv("Data_provinsi.csv")
+
+color = len(df.Aceh)
+warna = []
+for x in range(1, color + 1):
+    warna.append(x)
+
+plt.scatter(df.Aceh, df.Tahun, s=100, c=warna, cmap="Reds", edgecolors="black", linewidths=1, marker= "x")
+plt.scatter(df.Medan, df.Tahun, s=100, c=warna, cmap="Greens", edgecolors="black", linewidths=1, marker="^")
+
+
+
+
+plt.title("PROVINCE DATA OVER 10 YEARS")
+plt.legend()
+plt.tight_layout()
+plt.show()
